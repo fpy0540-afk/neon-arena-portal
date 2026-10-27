@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https: http://localhost http://127.0.0.1; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="description" content="Browse cosmetic skin offers in the Neon Arena player market."><title>Neon Arena · Skin market</title><link rel="stylesheet" href="assets/portal.css">
+<script src="assets/site-config.js" defer></script><script src="assets/portal.js" defer></script>
+</head>
+<body data-page="market" data-title-key="market_heading">
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">N</span><span><span class="brand-title">NEON ARENA</span><span class="brand-sub">PLAYER HUB</span></span></a>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html" data-i18n="nav_home">Home</a><a href="account.html" data-i18n="nav_account">Account</a><a href="collection.html" data-i18n="nav_collection">My collection</a><a href="stats.html" data-i18n="nav_stats">Stats</a><a href="market.html" data-i18n="nav_market">Skin market</a><a href="servers.html" data-i18n="nav_servers">Servers</a><a href="sessions.html" data-i18n="nav_sessions">My sessions</a><a href="updates.html" data-i18n="nav_updates">Updates</a><a href="help.html" data-i18n="nav_help">Help</a></nav>
+  <div class="top-actions"><div id="connectionStatus" class="connection"><span class="dot"></span><span id="connectionLabel">Portal status</span></div><details id="themeControl" class="theme-control">
+      <summary data-i18n-title="theme_tip"><span class="theme-icon">◈</span><span data-i18n="theme_label">Theme</span></summary>
+      <div class="theme-panel">
+        <div class="theme-panel-title" data-i18n="theme_choose">Choose accent color</div>
+        <div class="theme-swatches">
+          <button type="button" class="theme-option" data-theme-preset="neon" data-i18n-title="theme_neon"><span class="swatch-dot" data-swatch="neon"></span><span data-i18n="theme_neon">Neon</span></button>
+          <button type="button" class="theme-option" data-theme-preset="violet" data-i18n-title="theme_violet"><span class="swatch-dot" data-swatch="violet"></span><span data-i18n="theme_violet">Violet</span></button>
+          <button type="button" class="theme-option" data-theme-preset="rose" data-i18n-title="theme_rose"><span class="swatch-dot" data-swatch="rose"></span><span data-i18n="theme_rose">Rose</span></button>
+          <button type="button" class="theme-option" data-theme-preset="amber" data-i18n-title="theme_amber"><span class="swatch-dot" data-swatch="amber"></span><span data-i18n="theme_amber">Amber</span></button>
+          <button type="button" class="theme-option" data-theme-preset="lime" data-i18n-title="theme_lime"><span class="swatch-dot" data-swatch="lime"></span><span data-i18n="theme_lime">Lime</span></button>
+        </div>
+        <label class="theme-custom-label" for="accentPicker" data-i18n="theme_custom">Custom color</label>
+        <input id="accentPicker" class="theme-color-input" type="color" value="#59e1d3" aria-label="Custom accent color">
+      </div>
+    </details><div class="lang"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div></div>
+</header>
+<main>
+  <div class="page-title"><div><h1 data-i18n="market_heading">Skin market</h1><p data-i18n="market_intro">Browse real player offers. Purchases use game credits only — no cash payments.</p></div><span class="badge" data-i18n="online_not_checked">No background checks</span></div>
+  <div id="configNote" class="notice" hidden data-i18n="portal_unconfigured">The game portal has not been connected to its account service yet. Please try again later.</div>
+  <div id="pageNotice" class="notice" hidden></div>
+  <section class="grid two">
+    <article class="card">
+      <div class="card-head"><div><h2 data-i18n="inventory_title">Your synced skins</h2><p><span data-i18n="inventory_hint">Your game collection loads only after you ask for it.</span> · <span id="inventoryCount">0</span></p></div><span class="badge" data-i18n="sign_in_to_buy">Sign in to buy or list skins.</span></div>
+      <p class="hint" data-i18n="no_synced_skins">No synced skins found. Sync your collection from the game first.</p>
+      <div class="spacer"></div>
+      <div class="row"><button id="loadInventoryBtn" type="button" class="btn secondary" data-i18n="load_inventory">Load my skins</button><a class="btn secondary" href="account.html" data-i18n="sign_in">Sign in</a></div>
+      <div class="spacer"></div>
+      <div class="field"><label for="inventorySelect" data-i18n="choose_skin">Choose a skin</label><select id="inventorySelect"><option value="" data-i18n="no_synced_skins">No synced skins found. Sync your collection from the game first.</option></select></div>
+      <div class="field"><label for="askingPrice" data-i18n="asking_price">Your price in credits</label><input id="askingPrice" type="number" min="1" max="999999" step="1" inputmode="numeric" placeholder="100"></div>
+      <button id="listSkinBtn" type="button" class="btn primary" disabled data-i18n="list_skin">List skin</button>
+    </article>
+    <article class="card">
+      <div class="card-head"><div><h2 data-i18n="market_heading">Skin market</h2><p data-i18n="market_intro">Browse real player offers. Purchases use game credits only — no cash payments.</p></div><span class="feature-icon">✦</span></div>
+      <div class="row"><button id="loadOffersBtn" type="button" class="btn primary" data-i18n="load_offers">Load offers</button><a class="btn secondary" href="account.html" data-i18n="sign_in">Sign in</a></div>
+      <div id="marketStatus" class="status" aria-live="polite"></div>
+      <p class="table-note" data-i18n="sign_in_to_buy">Sign in to buy or list skins.</p>
+    </article>
+  </section>
+  <div class="spacer"></div>
+  <section class="card">
+    <div class="card-head"><div><h2 data-i18n="market_offers">Market offers</h2><p data-i18n="market_load_note">Load the offer list when you are ready.</p></div><button id="refreshOffersBtn" type="button" class="btn small secondary" data-i18n="refresh_offers">Refresh offers</button></div>
+    <div class="tabs">
+      <div class="field"><label for="marketSearch" data-i18n="search">Search skins</label><input id="marketSearch" type="search" data-i18n-placeholder="search" placeholder="Search skins"></div>
+      <div class="field"><label for="weaponFilter" data-i18n="weapon_filter">Weapon</label><select id="weaponFilter"><option value="" data-i18n="all_weapons">All weapons</option><option value="pistol">P250</option><option value="glock">Glock-18</option><option value="usp">USP-S</option><option value="deagle">Desert Eagle</option><option value="five7">Five-SeveN</option><option value="smg">MP9</option><option value="mac10">MAC-10</option><option value="mp7">MP7</option><option value="ump">UMP-45</option><option value="p90">P90</option><option value="shotgun">Nova</option><option value="xm">XM1014</option><option value="rifle">AK-47</option><option value="m4">M4A1-S</option><option value="famas">FAMAS</option><option value="galil">Galil AR</option><option value="aug">AUG</option><option value="sniper">AWP</option><option value="ssg">SSG 08</option><option value="negev">Negev</option><option value="knife" data-i18n="weapon_knife">Knife</option></select></div>
+      <div class="field"><label for="sortBy" data-i18n="sort_by">Sort by</label><select id="sortBy"><option value="new" data-i18n="sort_newest">Newest</option><option value="low" data-i18n="sort_low_price">Lowest price</option><option value="high" data-i18n="sort_high_price">Highest price</option></select></div>
+    </div>
+    <div id="offersList" class="list"><div class="empty" data-i18n="not_enough_data">No data to show yet. Use the button above to load it.</div></div>
+  </section>
+</main>
+<footer class="footer"><span data-i18n="footer">Neon Arena · Player portal · No real-money payments</span><a href="help.html" data-i18n="nav_help">Help</a></footer>
+</div>
+</body>
+</html>
