@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https: http://localhost http://127.0.0.1; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="description" content="Help for Neon Arena player accounts, sessions, skins and rooms."><title>Neon Arena · Help</title><link rel="stylesheet" href="assets/portal.css">
+<script src="assets/site-config.js" defer></script><script src="assets/portal.js" defer></script>
+</head>
+<body data-page="help" data-title-key="help_heading">
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">N</span><span><span class="brand-title">NEON ARENA</span><span class="brand-sub">PLAYER HUB</span></span></a>
+  <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav_aria"><a href="index.html" data-i18n="nav_home">Home</a><a href="account.html" data-i18n="nav_account">Account</a><a href="collection.html" data-i18n="nav_collection">My collection</a><a href="stats.html" data-i18n="nav_stats">Stats</a><a href="market.html" data-i18n="nav_market">Skin market</a><a href="servers.html" data-i18n="nav_servers">Servers</a><a href="sessions.html" data-i18n="nav_sessions">My sessions</a><a href="updates.html" data-i18n="nav_updates">Updates</a><a href="help.html" data-i18n="nav_help">Help</a></nav>
+  <div class="top-actions"><div id="connectionStatus" class="connection"><span class="dot"></span><span id="connectionLabel">Portal status</span></div><details id="themeControl" class="theme-control">
+      <summary data-i18n-title="theme_tip"><span class="theme-icon">◈</span><span data-i18n="theme_label">Theme</span></summary>
+      <div class="theme-panel">
+        <div class="theme-panel-title" data-i18n="theme_choose">Choose accent color</div>
+        <div class="theme-swatches">
+          <button type="button" class="theme-option" data-theme-preset="neon" data-i18n-title="theme_neon"><span class="swatch-dot" data-swatch="neon"></span><span data-i18n="theme_neon">Neon</span></button>
+          <button type="button" class="theme-option" data-theme-preset="violet" data-i18n-title="theme_violet"><span class="swatch-dot" data-swatch="violet"></span><span data-i18n="theme_violet">Violet</span></button>
+          <button type="button" class="theme-option" data-theme-preset="rose" data-i18n-title="theme_rose"><span class="swatch-dot" data-swatch="rose"></span><span data-i18n="theme_rose">Rose</span></button>
+          <button type="button" class="theme-option" data-theme-preset="amber" data-i18n-title="theme_amber"><span class="swatch-dot" data-swatch="amber"></span><span data-i18n="theme_amber">Amber</span></button>
+          <button type="button" class="theme-option" data-theme-preset="lime" data-i18n-title="theme_lime"><span class="swatch-dot" data-swatch="lime"></span><span data-i18n="theme_lime">Lime</span></button>
+        </div>
+        <label class="theme-custom-label" for="accentPicker" data-i18n="theme_custom">Custom color</label>
+        <input id="accentPicker" class="theme-color-input" type="color" value="#59e1d3" aria-label="Custom accent color" data-i18n-aria-label="theme_custom">
+      </div>
+    </details><div class="lang"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div></div>
+</header>
+<main>
+  <div class="page-title"><div><h1 data-i18n="help_heading">Quick help</h1><p data-i18n="help_intro">A few simple steps to get going.</p></div><span class="badge" data-i18n="online_not_checked">No background checks</span></div>
+  <div id="configNote" class="notice" hidden data-i18n="portal_unconfigured">The game portal has not been connected to its account service yet. Please try again later.</div>
+  <section class="grid two">
+    <article class="card"><div class="card-head"><div><h2 data-i18n="help_account_title">Sign in</h2><p data-i18n="help_account_text">Use the same account as your game.</p></div><span class="feature-icon">◎</span></div><a class="btn secondary" href="account.html" data-i18n="nav_account">Account</a></article>
+    <article class="card"><div class="card-head"><div><h2 data-i18n="help_market_title">Use the skin market</h2><p data-i18n="help_market_text">First sync your collection in the game. Then load your skins here, choose a price, and list one. Purchases use only game credits.</p></div><span class="feature-icon">✦</span></div><a class="btn secondary" href="market.html" data-i18n="nav_market">Skin market</a></article>
+    <article class="card"><div class="card-head"><div><h2 data-i18n="help_sessions_title">Protect your account</h2><p data-i18n="help_sessions_text">Sign in before opening My sessions. Revoke a browser or game session you do not recognize.</p></div><span class="feature-icon">◉</span></div><a class="btn secondary" href="sessions.html" data-i18n="nav_sessions">My sessions</a></article>
+    <article class="card"><div class="card-head"><div><h2 data-i18n="help_servers_title">Join a room</h2><p data-i18n="help_servers_text">Copy the invite from Servers and paste it into the game. Quick Tunnel addresses are temporary.</p></div><span class="feature-icon">⌖</span></div><a class="btn secondary" href="servers.html" data-i18n="nav_servers">Servers</a></article>
+    <article class="card"><div class="card-head"><div><h2 data-i18n="help_collection_title">View your collection</h2><p data-i18n="help_collection_text">Sign in, then load the collection. Sync skins from the game first.</p></div><span class="feature-icon">✦</span></div><a class="btn secondary" href="collection.html" data-i18n="nav_collection">My collection</a></article>
+    <article class="card"><div class="card-head"><div><h2 data-i18n="help_stats_title">Check your stats</h2><p data-i18n="help_stats_text">Your private match history loads only after sign-in and a button press.</p></div><span class="feature-icon">▥</span></div><a class="btn secondary" href="stats.html" data-i18n="nav_stats">Stats</a></article>
+    <article class="card"><div class="card-head"><div><h2 data-i18n="help_updates_title">Read updates</h2><p data-i18n="help_updates_text">Learn about new portal features, privacy, and setup notes.</p></div><span class="feature-icon">↻</span></div><a class="btn secondary" href="updates.html" data-i18n="nav_updates">Updates</a></article>
+  </section>
+  <div class="spacer"></div>
+  <section class="card"><div class="card-head"><div><h2 data-i18n="help_privacy_title">Your privacy</h2><p data-i18n="help_privacy_text">The site does not collect a hardware ID. It uses random app and session IDs. It does not make background internet checks.</p></div><span class="badge good" data-i18n="online_not_checked">No background checks</span></div><p class="hint" data-i18n="home_no_auto">Nothing is checked in the background. Pages load data only when you open them and press the matching button.</p></section>
+</main>
+<footer class="footer"><span data-i18n="footer">Neon Arena · Player portal · No real-money payments</span><a href="index.html" data-i18n="nav_home">Home</a></footer>
+</div>
+</body>
+</html>

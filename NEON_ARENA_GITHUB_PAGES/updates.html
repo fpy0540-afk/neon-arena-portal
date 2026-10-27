@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https: http://localhost http://127.0.0.1; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="description" content="What's new in the Neon Arena player portal."><title>Neon Arena · Updates</title><link rel="stylesheet" href="assets/portal.css">
+<script src="assets/site-config.js" defer></script><script src="assets/portal.js" defer></script>
+</head>
+<body data-page="updates" data-title-key="updates_heading">
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">N</span><span><span class="brand-title">NEON ARENA</span><span class="brand-sub">PLAYER HUB</span></span></a>
+  <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav_aria"><a href="index.html" data-i18n="nav_home">Home</a><a href="account.html" data-i18n="nav_account">Account</a><a href="collection.html" data-i18n="nav_collection">My collection</a><a href="stats.html" data-i18n="nav_stats">Stats</a><a href="market.html" data-i18n="nav_market">Skin market</a><a href="servers.html" data-i18n="nav_servers">Servers</a><a href="sessions.html" data-i18n="nav_sessions">My sessions</a><a href="updates.html" data-i18n="nav_updates">Updates</a><a href="help.html" data-i18n="nav_help">Help</a></nav>
+  <div class="top-actions"><div id="connectionStatus" class="connection"><span class="dot"></span><span id="connectionLabel">Portal status</span></div><details id="themeControl" class="theme-control">
+      <summary data-i18n-title="theme_tip"><span class="theme-icon">◈</span><span data-i18n="theme_label">Theme</span></summary>
+      <div class="theme-panel">
+        <div class="theme-panel-title" data-i18n="theme_choose">Choose accent color</div>
+        <div class="theme-swatches">
+          <button type="button" class="theme-option" data-theme-preset="neon" data-i18n-title="theme_neon"><span class="swatch-dot" data-swatch="neon"></span><span data-i18n="theme_neon">Neon</span></button>
+          <button type="button" class="theme-option" data-theme-preset="violet" data-i18n-title="theme_violet"><span class="swatch-dot" data-swatch="violet"></span><span data-i18n="theme_violet">Violet</span></button>
+          <button type="button" class="theme-option" data-theme-preset="rose" data-i18n-title="theme_rose"><span class="swatch-dot" data-swatch="rose"></span><span data-i18n="theme_rose">Rose</span></button>
+          <button type="button" class="theme-option" data-theme-preset="amber" data-i18n-title="theme_amber"><span class="swatch-dot" data-swatch="amber"></span><span data-i18n="theme_amber">Amber</span></button>
+          <button type="button" class="theme-option" data-theme-preset="lime" data-i18n-title="theme_lime"><span class="swatch-dot" data-swatch="lime"></span><span data-i18n="theme_lime">Lime</span></button>
+        </div>
+        <label class="theme-custom-label" for="accentPicker" data-i18n="theme_custom">Custom color</label>
+        <input id="accentPicker" class="theme-color-input" type="color" value="#59e1d3" aria-label="Custom accent color" data-i18n-aria-label="theme_custom">
+      </div>
+    </details><div class="lang"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div></div>
+</header>
+<main>
+  <div class="page-title"><div><h1 data-i18n="updates_heading">Latest updates</h1><p data-i18n="updates_intro">Notes and helpful changes for the Neon Arena player portal.</p></div><span class="badge" data-i18n="online_not_checked">No background checks</span></div>
+  <section class="grid three updates-grid">
+    <article class="card update-card"><div class="feature-icon">✦</div><span class="badge good" data-i18n="update_featured">Player experience</span><h2 data-i18n="update_portal_title">Portal improvements</h2><p data-i18n="update_portal_text">A cleaner account experience, stronger sign-up validation, private player stats, and a dedicated skin collection page.</p><div class="spacer"></div><div class="row"><a href="account.html" class="btn secondary" data-i18n="nav_account">Account</a><a href="collection.html" class="btn secondary" data-i18n="nav_collection">My collection</a></div></article>
+    <article class="card update-card"><div class="feature-icon">◇</div><span class="badge" data-i18n="privacy_label">Privacy</span><h2 data-i18n="update_privacy_title">Privacy by design</h2><p data-i18n="update_privacy_text">No hardware IDs and no background internet checks. Personal data is requested only after sign-in and your action.</p><div class="spacer"></div><a href="sessions.html" class="btn secondary" data-i18n="nav_sessions">My sessions</a></article>
+    <article class="card update-card"><div class="feature-icon">⌖</div><span class="badge" data-i18n="game_sync_label">Game sync</span><h2 data-i18n="update_game_title">Game account sync</h2><p data-i18n="update_game_text">Use the same Neon Arena account in the game and portal. Sync your skins from the game before loading your collection here.</p><div class="spacer"></div><a href="help.html" class="btn secondary" data-i18n="nav_help">Help</a></article>
+  </section>
+  <section class="card updates-note"><h2 data-i18n="updates_feedback_title">Good to know</h2><p data-i18n="updates_feedback_text">Online sections depend on the database schema being installed by the project owner. If a page reports missing portal tables, the owner needs to apply the supplied SQL schema in Supabase.</p><div class="spacer"></div><a href="help.html" class="btn secondary" data-i18n="nav_help">Help</a></section>
+</main>
+<footer class="footer"><span data-i18n="footer">Neon Arena · Player portal · No real-money payments</span><a href="help.html" data-i18n="nav_help">Help</a></footer>
+</div>
+</body>
+</html>
