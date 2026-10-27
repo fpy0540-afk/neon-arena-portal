@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https:; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="description" content="Manage your Neon Arena player account."><title>Neon Arena · Account</title><link rel="stylesheet" href="assets/portal.css">
+<script src="assets/site-config.js" defer></script><script src="assets/portal.js" defer></script>
+</head>
+<body data-page="account" data-title-key="account_heading">
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">N</span><span><span class="brand-title">NEON ARENA</span><span class="brand-sub">PLAYER HUB</span></span></a>
+  <nav class="nav" aria-label="Main navigation" data-i18n-aria-label="nav_aria"><a href="index.html" data-i18n="nav_home">Home</a><a href="account.html" data-i18n="nav_account">Account</a><a href="collection.html" data-i18n="nav_collection">My collection</a><a href="stats.html" data-i18n="nav_stats">Stats</a><a href="market.html" data-i18n="nav_market">Skin market</a><a href="servers.html" data-i18n="nav_servers">Servers</a><a href="sessions.html" data-i18n="nav_sessions">My sessions</a><a href="updates.html" data-i18n="nav_updates">Updates</a><a href="help.html" data-i18n="nav_help">Help</a></nav>
+  <div class="top-actions"><div id="connectionStatus" class="connection"><span class="dot"></span><span id="connectionLabel">Portal status</span></div><details id="themeControl" class="theme-control">
+      <summary data-i18n-title="theme_tip"><span class="theme-icon">◈</span><span data-i18n="theme_label">Theme</span></summary>
+      <div class="theme-panel">
+        <div class="theme-panel-title" data-i18n="theme_choose">Choose accent color</div>
+        <div class="theme-swatches">
+          <button type="button" class="theme-option" data-theme-preset="neon" data-i18n-title="theme_neon"><span class="swatch-dot" data-swatch="neon"></span><span data-i18n="theme_neon">Neon</span></button>
+          <button type="button" class="theme-option" data-theme-preset="violet" data-i18n-title="theme_violet"><span class="swatch-dot" data-swatch="violet"></span><span data-i18n="theme_violet">Violet</span></button>
+          <button type="button" class="theme-option" data-theme-preset="rose" data-i18n-title="theme_rose"><span class="swatch-dot" data-swatch="rose"></span><span data-i18n="theme_rose">Rose</span></button>
+          <button type="button" class="theme-option" data-theme-preset="amber" data-i18n-title="theme_amber"><span class="swatch-dot" data-swatch="amber"></span><span data-i18n="theme_amber">Amber</span></button>
+          <button type="button" class="theme-option" data-theme-preset="lime" data-i18n-title="theme_lime"><span class="swatch-dot" data-swatch="lime"></span><span data-i18n="theme_lime">Lime</span></button>
+        </div>
+        <label class="theme-custom-label" for="accentPicker" data-i18n="theme_custom">Custom color</label>
+        <input id="accentPicker" class="theme-color-input" type="color" value="#59e1d3" aria-label="Custom accent color" data-i18n-aria-label="theme_custom">
+      </div>
+    </details><div class="lang"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div></div>
+</header>
+<main>
+  <div class="page-title"><div><h1 data-i18n="account_heading">Your account</h1><p data-i18n="account_intro">Sign in to view your profile and use account features.</p></div><span class="badge" data-i18n="online_not_checked">No background checks</span></div>
+  <div id="configNote" class="notice" hidden data-i18n="portal_unconfigured">The game portal has not been connected to its account service yet. Please try again later.</div>
+  <div id="pageNotice" class="notice" hidden aria-live="polite" role="status"></div>
+  <div class="grid two">
+    <section id="signedOutCard" class="card auth-card">
+      <div id="standardAuthView">
+        <div class="card-head"><div><h2 data-i18n="sign_in_title">Welcome back</h2><p data-i18n="sign_in_text">Use the same Neon Arena account as in the game.</p></div><span class="feature-icon">◎</span></div>
+        <div id="authModes" class="auth-tabs" role="tablist" aria-label="Account access" data-i18n-aria-label="auth_tabs_aria">
+          <button id="signInTab" class="auth-tab active" type="button" role="tab" tabindex="0" aria-selected="true" aria-controls="signInForm" data-i18n="sign_in">Sign in</button>
+          <button id="signUpTab" class="auth-tab" type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="signUpForm" data-i18n="create_account">Create account</button>
+        </div>
+        <form id="signInForm" class="auth-form" role="tabpanel" tabindex="0" aria-labelledby="signInTab" method="post" novalidate>
+          <div class="field"><label for="email" data-i18n="email">Email address</label><input id="email" type="email" autocomplete="email" maxlength="254" required placeholder="player@example.com"></div>
+          <div class="field"><label for="password" data-i18n="password">Password</label><div class="password-field"><input id="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required><button type="button" class="password-toggle" data-password-toggle="password" data-i18n="show_password" aria-pressed="false">Show</button></div></div>
+          <div class="row"><button id="signInBtn" type="submit" disabled class="btn primary" data-i18n="sign_in">Sign in</button><a class="btn secondary" href="help.html" data-i18n="nav_help">Help</a></div>
+          <div class="auth-links"><button id="forgotPasswordBtn" type="button" class="text-button" data-i18n="forgot_password">Forgot password?</button><button id="resendConfirmationBtn" type="button" class="text-button" data-i18n="resend_confirmation">Resend confirmation code</button></div>
+        </form>
+        <form id="signUpForm" class="auth-form" role="tabpanel" tabindex="0" aria-labelledby="signUpTab" method="post" hidden novalidate>
+          <div class="field"><label for="signupEmail" data-i18n="email">Email address</label><input id="signupEmail" type="email" autocomplete="email" maxlength="254" required placeholder="player@example.com"></div>
+          <div class="field"><label for="signupName" data-i18n="player_name">Player name</label><input id="signupName" type="text" autocomplete="nickname" minlength="1" maxlength="24" required placeholder="NeonPlayer"></div>
+          <div class="field"><label for="signupPassword" data-i18n="password">Password</label><div class="password-field"><input id="signupPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" required><button type="button" class="password-toggle" data-password-toggle="signupPassword" data-i18n="show_password" aria-pressed="false">Show</button></div><small data-i18n="password_hint">Use at least 8 characters.</small></div>
+          <div class="field"><label for="signupPasswordConfirm" data-i18n="password_confirmation">Confirm password</label><div class="password-field"><input id="signupPasswordConfirm" type="password" autocomplete="new-password" minlength="8" maxlength="128" required><button type="button" class="password-toggle" data-password-toggle="signupPasswordConfirm" data-i18n="show_password" aria-pressed="false">Show</button></div></div>
+          <div class="checkline"><span>✦</span><span data-i18n="auth_email_note">If email confirmation is enabled, we’ll send a one-time code.</span></div>
+          <div class="row auth-submit-row"><button id="signUpBtn" type="submit" disabled class="btn primary" data-i18n="create_account">Create account</button><a class="btn secondary" href="help.html" data-i18n="nav_help">Help</a></div>
+        </form>
+        <section id="signupVerificationPanel" class="verification-panel" hidden aria-labelledby="verifyEmailHeading">
+          <h2 id="verifyEmailHeading" data-i18n="verify_email_heading">Confirm your email</h2>
+          <p data-i18n="verify_email_intro">Enter the one-time code from your confirmation email to finish creating your account.</p>
+          <form id="signupVerificationForm" class="auth-form" method="post" novalidate>
+            <div class="field"><label for="verifyEmail" data-i18n="email">Email address</label><input id="verifyEmail" type="email" autocomplete="email" maxlength="254" readonly required></div>
+            <div class="field"><label for="verificationCode" data-i18n="email_code">Confirmation code</label><input id="verificationCode" class="otp-input" type="text" inputmode="numeric" pattern="[0-9]{6,10}" minlength="6" maxlength="10" autocomplete="one-time-code" autocapitalize="off" spellcheck="false" placeholder="6–10 digit code" data-i18n-placeholder="code_placeholder" aria-describedby="codeHelp" required><small id="codeHelp" data-i18n="code_help">The code can take a minute to arrive. Check spam; if it never arrives, the project owner must configure SMTP in Supabase.</small></div>
+            <div class="row"><button id="verifyCodeBtn" type="submit" disabled class="btn primary" data-i18n="verify_code">Verify email</button><button id="cancelVerifyBtn" type="button" class="btn secondary" data-i18n="back_to_sign_in">Back to sign in</button></div>
+            <div class="auth-links"><button id="resendCodeBtn" type="button" disabled class="text-button" data-i18n="resend_code">Resend code</button></div>
+          </form>
+        </section>
+        <section id="recoveryPanel" class="recovery-panel" hidden>
+          <h2 data-i18n="recovery_heading">Set a new password</h2><p data-i18n="recovery_intro">Choose a new password for your account.</p>
+          <form id="recoveryForm" class="auth-form" method="post" novalidate>
+            <div class="field"><label for="newPassword" data-i18n="new_password">New password</label><div class="password-field"><input id="newPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" required><button type="button" class="password-toggle" data-password-toggle="newPassword" data-i18n="show_password" aria-pressed="false">Show</button></div></div>
+            <div class="field"><label for="newPasswordConfirm" data-i18n="password_confirmation">Confirm password</label><div class="password-field"><input id="newPasswordConfirm" type="password" autocomplete="new-password" minlength="8" maxlength="128" required><button type="button" class="password-toggle" data-password-toggle="newPasswordConfirm" data-i18n="show_password" aria-pressed="false">Show</button></div></div>
+            <div class="row"><button id="saveNewPasswordBtn" type="submit" disabled class="btn primary" data-i18n="save_new_password">Save new password</button><button id="recoveryCancelBtn" type="button" class="btn secondary" data-i18n="back_to_sign_in">Back to sign in</button></div>
+          </form>
+        </section>
+        <div id="authStatus" class="status" aria-live="polite"></div>
+      </div>
+    </section>
+    <aside id="signedOutInfo" class="card auth-aside">
+      <div class="feature-icon">✦</div><h2 data-i18n="register_hint_title">One account, game and portal</h2><p data-i18n="register_hint">New here? Choose Create account, enter a player name, and we’ll get you started.</p>
+      <div class="auth-benefits">
+        <div><b>01</b><span data-i18n="auth_benefit_profile">Keep one player profile for the game and website.</span></div>
+        <div><b>02</b><span data-i18n="auth_benefit_collection">Browse your synced skins and match stats after sign-in.</span></div>
+        <div><b>03</b><span data-i18n="auth_benefit_privacy">No hardware ID and no background internet checks.</span></div>
+      </div>
+      <div class="spacer"></div><a class="btn secondary" href="updates.html" data-i18n="nav_updates">Updates</a>
+    </aside>
+  </div>
+  <section id="signedInCard" class="grid two" hidden>
+    <article class="card">
+      <div class="card-head"><div><h2 data-i18n="profile_card">Player profile</h2><p><span data-i18n="signed_in_as">Signed in as</span> <strong id="signedInEmail">—</strong></p></div><span class="badge good">NEON ID</span></div>
+      <div class="grid two stats-grid">
+        <div><div id="creditsValue" class="stat">—</div><div class="stat-label" data-i18n="credits">Game credits</div></div>
+        <div><div id="accountIdValue" class="stat stat-small mono">—</div><div class="stat-label" data-i18n="account_id">Account ID</div></div>
+      </div>
+      <div class="spacer"></div>
+      <div class="field"><label for="profileName" data-i18n="player_name">Player name</label><input id="profileName" type="text" autocomplete="nickname" maxlength="24"></div>
+      <div class="field"><label for="profileLocale" data-i18n="language">Language</label><select id="profileLocale"><option value="en">English</option><option value="ru">Русский</option></select></div>
+      <div class="row"><button id="saveProfileBtn" type="button" class="btn primary" data-i18n="save_profile">Save profile</button><button id="loadProfileBtn" type="button" class="btn secondary" data-i18n="load_profile">Load my profile</button></div>
+      <div id="profileStatus" class="status" aria-live="polite"></div>
+    </article>
+    <article class="card">
+      <div class="card-head"><div><h2 data-i18n="account_id">Account ID</h2><p data-i18n="help_privacy_text">The site does not collect a hardware ID. It uses random app and session IDs. It does not make background internet checks.</p></div></div>
+      <div class="field"><label data-i18n="app_instance">This browser app ID</label><div id="appInstanceValue" class="mono hint">—</div></div>
+      <div class="field"><label data-i18n="app_session">This browser session</label><div id="appSessionValue" class="mono hint">—</div></div>
+      <div class="row"><a class="btn secondary" href="sessions.html" data-i18n="nav_sessions">My sessions</a><a class="btn secondary" href="stats.html" data-i18n="nav_stats">Stats</a><button id="signOutBtn" type="button" class="btn danger" data-i18n="sign_out">Sign out</button></div>
+    </article>
+  </section>
+  <div id="schemaNote" class="notice" hidden data-i18n="schema_missing">The portal database schema has not been applied yet. Ask the project owner to run the provided SQL schema.</div>
+</main>
+<footer class="footer"><span data-i18n="footer">Neon Arena · Player portal · No real-money payments</span><a href="help.html" data-i18n="nav_help">Help</a></footer>
+</div>
+</body>
+</html>
