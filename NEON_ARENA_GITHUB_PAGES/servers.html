@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https: http://localhost http://127.0.0.1; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="description" content="Find recent Neon Arena game rooms and copy an invite."><title>Neon Arena · Servers</title><link rel="stylesheet" href="assets/portal.css">
+<script src="assets/site-config.js" defer></script><script src="assets/portal.js" defer></script>
+</head>
+<body data-page="servers" data-title-key="servers_heading">
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">N</span><span><span class="brand-title">NEON ARENA</span><span class="brand-sub">PLAYER HUB</span></span></a>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html" data-i18n="nav_home">Home</a><a href="account.html" data-i18n="nav_account">Account</a><a href="sessions.html" data-i18n="nav_sessions">My sessions</a><a href="market.html" data-i18n="nav_market">Skin market</a><a href="servers.html" data-i18n="nav_servers">Servers</a><a href="help.html" data-i18n="nav_help">Help</a></nav>
+  <div class="top-actions"><div id="connectionStatus" class="connection"><span class="dot"></span><span id="connectionLabel">Portal status</span></div><div class="lang"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div></div>
+</header>
+<main>
+  <div class="page-title"><div><h1 data-i18n="servers_heading">Find a game</h1><p data-i18n="servers_intro">Browse recently active rooms. Invite links can expire when the host’s temporary tunnel stops.</p></div><span class="badge" data-i18n="online_not_checked">No background checks</span></div>
+  <div id="configNote" class="notice" hidden data-i18n="portal_unconfigured">The game portal has not been connected to its account service yet. Please try again later.</div>
+  <div id="pageNotice" class="notice" hidden></div>
+  <section class="card">
+    <div class="card-head"><div><h2 data-i18n="servers_heading">Find a game</h2><p data-i18n="servers_intro">Browse recently active rooms. Invite links can expire when the host’s temporary tunnel stops.</p></div><span class="feature-icon">⌖</span></div>
+    <div class="row"><button id="loadServersBtn" type="button" class="btn primary" data-i18n="load_servers">Find rooms</button><button id="refreshServersBtn" type="button" class="btn secondary" data-i18n="refresh_servers">Refresh rooms</button></div>
+    <div id="serversStatus" class="status" aria-live="polite"></div>
+  </section>
+  <div class="spacer"></div>
+  <section class="card">
+    <div class="card-head"><div><h2 data-i18n="nav_servers">Servers</h2><p data-i18n="servers_empty">No recent rooms found. Try again later.</p></div></div>
+    <div class="tabs">
+      <div class="field"><label for="serverSearch" data-i18n="server_search">Search name or room code</label><input id="serverSearch" type="search" data-i18n-placeholder="server_search" placeholder="Search name or room code"></div>
+      <div class="field"><label for="mapFilter" data-i18n="map_filter">Map</label><select id="mapFilter"><option value="" data-i18n="all_maps">All maps</option><option value="Неон-Даст" data-i18n="map_dust">Neon Dust</option><option value="Завод" data-i18n="map_factory">Factory</option><option value="Кварталы" data-i18n="map_districts">Districts</option><option value="Перекрёстки" data-i18n="map_crossroads">Crossroads</option></select></div>
+      <div class="field"><label for="modeFilter" data-i18n="mode_filter">Mode</label><select id="modeFilter"><option value="" data-i18n="all_modes">All modes</option><option value="surv" data-i18n="mode_surv">Survival</option><option value="dm" data-i18n="mode_dm">Deathmatch</option><option value="bomb" data-i18n="mode_bomb">Bomb</option></select></div>
+    </div>
+    <div id="serversList" class="list"><div class="empty" data-i18n="not_enough_data">No data to show yet. Use the button above to load it.</div></div>
+    <p class="table-note" data-i18n="help_servers_text">Copy the invite from Servers and paste it into the game. Quick Tunnel addresses are temporary.</p>
+  </section>
+</main>
+<footer class="footer"><span data-i18n="footer">Neon Arena · Player portal · No real-money payments</span><a href="help.html" data-i18n="nav_help">Help</a></footer>
+</div>
+</body>
+</html>

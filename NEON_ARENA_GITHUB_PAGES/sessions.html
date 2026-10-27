@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https: http://localhost http://127.0.0.1; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="description" content="Review and revoke Neon Arena account sessions."><title>Neon Arena · My sessions</title><link rel="stylesheet" href="assets/portal.css">
+<script src="assets/site-config.js" defer></script><script src="assets/portal.js" defer></script>
+</head>
+<body data-page="sessions" data-title-key="session_heading">
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">N</span><span><span class="brand-title">NEON ARENA</span><span class="brand-sub">PLAYER HUB</span></span></a>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html" data-i18n="nav_home">Home</a><a href="account.html" data-i18n="nav_account">Account</a><a href="sessions.html" data-i18n="nav_sessions">My sessions</a><a href="market.html" data-i18n="nav_market">Skin market</a><a href="servers.html" data-i18n="nav_servers">Servers</a><a href="help.html" data-i18n="nav_help">Help</a></nav>
+  <div class="top-actions"><div id="connectionStatus" class="connection"><span class="dot"></span><span id="connectionLabel">Portal status</span></div><div class="lang"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ru">RU</button></div></div>
+</header>
+<main>
+  <div class="page-title"><div><h1 data-i18n="session_heading">My sessions</h1><p data-i18n="session_intro">Only sessions for your signed-in account appear here. This page does not check sessions until you choose Load sessions.</p></div><span class="badge" data-i18n="online_not_checked">No background checks</span></div>
+  <div id="configNote" class="notice" hidden data-i18n="portal_unconfigured">The game portal has not been connected to its account service yet. Please try again later.</div>
+  <section id="sessionsLocked" class="card">
+    <h2 data-i18n="sessions_locked">Your sessions are private. Sign in to view them.</h2><p data-i18n="session_intro">Only sessions for your signed-in account appear here. This page does not check sessions until you choose Load sessions.</p><div class="spacer"></div><a class="btn primary" href="account.html" data-i18n="go_sign_in">Go to sign in</a>
+  </section>
+  <section id="sessionsPanel" class="card" hidden>
+    <div class="card-head"><div><h2 data-i18n="session_heading">My sessions</h2><p data-i18n="session_intro">Only sessions for your signed-in account appear here. This page does not check sessions until you choose Load sessions.</p></div><span class="badge good" data-i18n="online_not_checked">No background checks</span></div>
+    <div class="row"><button id="loadSessionsBtn" type="button" class="btn primary" data-i18n="load_sessions">Load sessions</button><button id="refreshSessionsBtn" type="button" class="btn secondary" data-i18n="refresh_sessions">Refresh sessions</button></div>
+    <div id="sessionsStatus" class="status" aria-live="polite"></div><div class="spacer"></div>
+    <div id="sessionsList" class="list"><div class="empty" data-i18n="not_enough_data">No data to show yet. Use the button above to load it.</div></div>
+  </section>
+</main>
+<footer class="footer"><span data-i18n="footer">Neon Arena · Player portal · No real-money payments</span><a href="help.html" data-i18n="nav_help">Help</a></footer>
+</div>
+</body>
+</html>
